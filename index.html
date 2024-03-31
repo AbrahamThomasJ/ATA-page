@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        (function(){
+            const userTheme = localStorage.getItem("theme");
+           const darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+           if(userTheme === "dark" || (!userTheme && darkQuery.matches)){
+               setTheme("dark");
+           };
+
+           darkQuery.addEventListener("change",function(e){
+               if(!localStorage.getItem("theme"))
+               setTheme(e.matches ? "dark" : "light");
+           });
+
+           function setTheme(newTheme){
+               document.documentElement.setAttribute("data-theme",newTheme);
+           };
+
+        })();
+
+    </script>
+
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body class="body">
+
+    
+    <header>
+        <nav class="nav__container"  alt="menú de navegacion">
+
+            <img class="logue__nav__icon lightMode--toggle--img--light" src="./assets/icons/ata-logue-light.svg"  alt="Logo">
+            <img class="logue__nav__icon lightMode--toggle--img--dark" src="./assets/icons/ata-logue-dark.svg" alt="Logo">
+            
+    
+    
+            <a href="#menu" class="nav__menu nav__menu--first">
+                <img class="nav__icon nav__icon__menu__dark" src="./assets/icons/menu-dark.svg" alt="Icono de menú">
+
+                <img class="nav__icon nav__icon__menu__light" src="./assets/icons/menu-light.svg" alt="Icono de menú">
+
+               
+
+            </a>
+    
+            <a href="#" class="nav__menu nav__menu--second" >
+               <img class="nav__icon nav__icon__arrow__dark" src="./assets/icons/arrow-back-dark.svg"  alt="Icono de flecha hacia atrás">
+               
+               <img class="nav__icon nav__icon__arrow__light" src="./assets/icons/arrow-back-light.svg"  alt="Icono de flecha hacia atrás">
+               
+
+
+            </a>
+    
+    
+    
+    
+    
+    
+            
+            <ul class="dropdown"  id="menu" >
+            
+                <li class="dropdown__li" tabindex="5" alt="informacion sobre las actividades que hacemos como compañia de teatro">
+                    <a href="#company" class="dropdown__li__link">
+                        
+                        <span class="dropdown__li__link__span" ><p>Compañia</p></span>
+                        
+                        <img class=" lightMode--toggle--img--light" src="./assets/icons/bank-light.svg" alt="Logo de una escuela">
+                        <img class=" lightMode--toggle--img--dark" src="./assets/icons/bank-dark.svg" alt="Logo de una escuela">
+                        
+                                            
+                    </a>
+                    
+                </li>
+    
+                <li class="dropdown__li" tabindex="16">
+                    <a href="#productions" class="dropdown__li__link">
+                        
+                        <span class="dropdown__li__link__span" ><p>Producciones</p></span>
+                        
+                        <img class="lightMode--toggle--img--light" id="lightMode--toggle--img--light" src="./assets/icons/masks-theater-solid.svg" alt="Icono de una mascara feliz y otra triste">
+    
+                        <img class="lightMode--toggle--img--dark" id="lightMode--toggle--img--dark" src="./assets/icons/masks-theater-solid (1).svg" alt="Icono de una mascara feliz y otra triste">
+                        
+                                           
+                    </a>
+                </li>
+
+
+
+
+                <li class="dropdown__li logue__icon__container">
+
+
+                    <img class="footer--toggle--img--dark" src="./assets/icons/ata-logue-dark.svg" alt="Logo de A Telón Abierto">
+                    <img class="footer--toggle--img--light" src="./assets/icons/ata-logue-light.svg" alt="Logo de A Telón Abierto">
+
+
+                </li>
+
+
+
+
+
+
+                <li class="dropdown__li">
+                    <a href="#academy" class="dropdown__li__link">
+                        
+                        <span class="dropdown__li__link__span" ><p>Academia</p></span>
+                        <img class="lightMode--toggle--img--dark" id="lightMode--toggle--img--dark" src="./assets/icons/scroll-solid (2).svg" alt="Logo de un pergamino">
+                        <img class="lightMode--toggle--img--light" id="lightMode--toggle--img--light" src="./assets/icons/scroll-solid (1).svg" alt="Logo de un pergamino">
+                        
+                    </a>
+                </li>
+                <li class="dropdown__li">
+                    <a href="#contact-us" class="dropdown__li__link">
+                        
+                        <span class="dropdown__li__link__span" ><p>Contactanos</p></span>
+
+                        <img class="lightMode--toggle--img--dark" id="lightMode--toggle--img--dark" src="./assets/icons/user-solid (2).svg" alt="Icono de usuario">
+                        <img class="lightMode--toggle--img--light" id="lightMode--toggle--img--light" src="./assets/icons/user-solid (1).svg" alt="Icono de usuario">
+                        
+                        
+                       
+                    </a>
+                </li>
+                <li class="dropdown__li">
+
+                    <button id="li-lightMode--toggle" class="li-lightMode--toggle">
+                        <img class="lightMode--toggle--img--light" id="lightMode--toggle--img--light" src="./assets/icons/sun-solid.svg" alt="Icono de una mascara feliz y otra triste">
+    
+                      
+    
+    
+    
+                        <img class="lightMode--toggle--img--dark" id="lightMode--toggle--img--dark" src="./assets/icons/cloud-moon-solid.svg" alt="Icono de una mascara feliz y otra triste">
+                        
+                    </button>  
+
+                </li>
+
+            
+            </ul>
+
+            
+               
+                
+                <button id="lightMode--toggle" class="lightMode--toggle">
+                   <img class="lightMode--toggle--img--light" id="lightMode--toggle--img--light" src="./assets/icons/sun-solid.svg" alt="Icono de un sol indicanco activar modo claro">                   
+    
+                   <img class="lightMode--toggle--img--dark" id="lightMode--toggle--img--dark" src="./assets/icons/cloud-moon-solid.svg" alt="Icono de una luna con una nube al frente indicando modo oscuro">
+                 
+                 
+                </button>   
+                
+                    
+                
+
+            
+
+        </nav>
+    
+    </header>
+
+
+
+    <main class="main">
+
+        <section class="section main__section " id="section">
+            
+            <a class="proximamente__link" href="#next__production__section">
+                <div class="proximamente">
+                    <p>Próximamente</p>
+                </div>
+            </a>
+
+
+            <div class="section__one__div">
+
+                <h1 class="section__one__h1" tabindex="1">
+                    <span class="section__one__h1__span">¡Somos!</span> <br> A TELÓN ABIERTO
+                </h1>
+
+                <p class="section__one__p" tabindex="2">
+                    Nuestra ultima produccion
+                </p>
+
+                <div class="section__one__video__container" tabindex="3" alt="Video corto de YouTube en que el se muestra la ultima produccion de A Telon Abierto `Canción de Navidad`. Una obra obra escrita por Charles Dickens; adaptada y dirigida por David Torres.">
+                    <iframe  class="section__one__video" src="https://www.youtube.com/embed/zh-m9x4LYh4?si=sfkh3l00ER85NOE1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <section class="section next__production__section" id="next__production__section" alt="Seccion de la proxima produccion de A telón Abierto">
+
+            <img class="campanero__letters" src="./assets/campanero/titulo con icono.png" alt="">
+            <a href="https://wa.me/584245127649"><button class="button__to__ws" ><p> ¡Adquiere tus entradas!</p></button></a>
+
+
+
+            <div class="counter__container" alt="Contador regresivo del dia de presentacion de nuestra proxima producción">
+
+                <h2>Faltan</h2>
+        
+                <div class="regresive__counter__container">
+            
+                    
+            
+                    <div>
+                        <p class="counter__number" id="days">99</p>
+                        <p>Meses</p>
+            
+                    </div>
+                    <div>
+                        <p class="counter__number" id="hours">23</p>
+                        <p>horas</p>
+            
+                    </div>
+                    <div>
+                        <p class="counter__number" id="minutes">12</p>
+                        <p>Minutos</p>
+            
+                    </div>
+                    <div>
+                        <p class="counter__number" id="seconds">12</p>
+                        <p>Segundos</p>
+            
+                    </div>
+            
+            
+            
+                </div>
+        
+            </div>
+
+        </section>
+
+    
+
+
+       <section class="section section__two" id="company">
+
+        <h2>Ven y abre el <span>telon</span> con nosotros!</h2>
+
+        <p>Cada inicio de año hacemos casting para darle oportunidad a nuevos talentos de formar parte de nuestro staff de actores</p>
+
+        <div class="carousel">
+
+            <button class="arrow arrow__left" id="arrow__left">
+                <img class="toggle--img--light" src="./assets/icons/chevron-left.svg" alt="Flecha para pasar la imagen">
+                <img class="toggle--img--dark" src="./assets/icons/chevron-left-dark.svg" alt="Flecha para pasar a la imagen">
+
+            </button>
+
+            <div class="project__container">
+                <ul class="ul__project__container" id="ul__project__container">
+                    <li id="ul__project__container__li__element"><img class="project" src="./assets/atapicture/staff (1).png" alt="Imagen de un miembro o de varios miembros del staff de A Telón Abierto"></li>
+                    <li id="ul__project__container__li__element"><img class="project" src="./assets/atapicture/staff (2).png" alt="Imagen de un miembro o de varios miembros del staff de A Telón Abierto"></li>
+                    <li id="ul__project__container__li__element"><img class="project" src="./assets/atapicture/staff (3).png" alt="Imagen de un miembro o de varios miembros del staff de A Telón Abierto"></li>
+                    <li id="ul__project__container__li__element"><img class="project" src="./assets/images/bersekguts.jpeg" alt="Imagen de un miembro o de varios miembros del staff de A Telón Abierto"></li>
+                    <li id="ul__project__container__li__element"><img class="project" src="./assets/images/tommy.webp" alt="Imagen de un miembro o de varios miembros del staff de A Telón Abierto"></li>
+                    <li id="ul__project__container__li__element"><img class="project" src="./assets/images/daemonensangrentado.jpeg" alt="Imagen de un miembro o de varios miembros del staff de A Telón Abierto"></li>
+
+                </ul>
+
+            </div>
+            
+            <button class="arrow arrow__right" id="arrow__right">
+                <img class="toggle--img--light" src="./assets/icons/chevron-right.svg" alt="Flecha para pasar a la imagen de atrás">
+                <img class="toggle--img--dark" src="./assets/icons/chevron-right-dark.svg" alt="Flecha para pasar a la imagen de atrás">
+            </button>
+
+        </div>
+
+
+        </section>
+
+        <section class="section section__three" id="productions">
+
+
+
+
+
+            <h2 class="title">Presentamos propuestas de diferentes generos para <span>dignificar</span> el teatro en nuestra reguión</h2>
+
+            <div class="container__slider">
+        
+        
+                <div class="cards-container">
+        
+                    <input type="radio" name="slider" id="item-1"  tabindex="1" checked >
+                    <input type="radio" name="slider" id="item-2"  tabindex="2">
+                    <input type="radio" name="slider" id="item-3" tabindex="3">
+                    <input type="radio" name="slider" id="item-4" tabindex="4">
+                    <input type="radio" name="slider" id="item-5" tabindex="5">
+                    <input type="radio" name="slider" id="item-6" tabindex="6">
+        
+                    <div class="cards cards-img">
+        
+                        <label class="card" for="item-1" id="selector-1" >
+                            <img src="./assets/atapicture/canciondenavidad.png" alt="Poster de la muestra teatral">
+                        </label>
+                        <label class="card" for="item-2" id="selector-2">
+                            <img src="./assets/atapicture/profundo.png" alt="Poster de la muestra teatral">
+                        </label>
+                        <label class="card" for="item-3" id="selector-3">
+                            <img src="./assets/atapicture/llamadadeauxilio.png" alt="Poster de la muestra teatral">
+                        </label>
+                        <label class="card" for="item-4" id="selector-4" >
+                            <img src="./assets/atapicture/anoranza.png" alt="Poster de la muestra teatral">
+                        </label>
+                        <label class="card" for="item-5" id="selector-5">
+                            <img src="./assets/atapicture/lcc.png" alt="Poster de la muestra teatral">
+                        </label>
+                        <label class="card" for="item-6" id="selector-6">
+                            <img src="./assets/atapicture/colores.png" alt="Poster de la muestra teatral">
+                        </label>
+        
+                    </div>
+        
+                    <div class="cards-p">
+        
+                        <label class="card-p" id="selector-1">
+                            <p ><span>Cancion de navidad</span><br>uno de los cuentos más famosos del escritor británico Charles Dickens.
+        
+                                En la víspera de Navidad, Ebenezer Scrooge, quien no cree en el espiritu de esta festividad, recibe la visita de cuatro fantasmas: uno le muestra su pasado, otro el presente y el último, su futuro. Después de varias experiencias conmovedoras, la vida del protagonista cambia para siempre.</p>
+                        </label>
+                        <label class="card-p" id="selector-2">
+                            <p ><span>Profundo</span><br>Una comedia de José Ignacio Cabrujas. La obra ilustra la persistencia de unos personajes que, en su afán por encontrar un tesoro enterrado, nos muestran un hondo vacío existencial, la ausencia de sentido, la fragmentariedad de unos valores poco nítidos y la presencia de una angustiosa identidad que se encuentra entrampada en lo inestable, absurdo y marginal.<br>
+        
+                                Obra escrita por José Ignacio Cabrujas, y dirigida por David Torres.</p>
+                        </label>
+                        <label class="card-p" id="selector-3">
+                            <p ><span>Parrafo selector 3</span></p>
+                        </label>
+                        <label class="card-p" id="selector-4">
+                            <p ><span>Añoranza</span><br>Pablo Saval es un hombre mayor que siente haber desperdiciado su vida, encontrándose absolutamente solo, hundido en la miseria y sufriendo de una gran depresión.
+        
+                                Pensando en su soledad, recordó aquel amor de su juventud Ana de Sandres, es la mujer que siempre había anhelado, y creyó que tal vez podría tener una nueva oportunidad con ella.
+                                
+                                Añorándola va tras ella y, aunque el amor vuelve a mostrar su rostro, el tiempo ya ha dejado su huella y la consumación del deseo no es posible.</p>
+                        </label>
+                        <label class="card-p" id="selector-5">
+                            <p><span>La cantante calva</span><br>Una parodia de la vida burguesa, una crítica a los males de la sociedad. Los diálogos entre la pareja Smith y entre los Martin nunca llevan a algún lado. Son tan absurdos e incoherentes como el mismo nombre de la obra.</p>
+                        </label>
+                        <label class="card-p" id="selector-6">
+                            <p><span>Colores</span><br>Les presentamos nuestra primera obra de teatro "COLORES". Una mágica puesta en escena que llegó para enseñarles a los pequeños de la casa valores como el compartir y la humildad. Sin duda, una obra de teatro llena de mucho colorido, perfecta para disfrutarla en familia.</p>
+                        </label>
+        
+                    </div>
+        
+        
+        
+        
+        
+                </div>
+        
+               
+        
+        
+            </div>
+
+
+        </section>
+
+
+
+
+        <section class="section section__four" id="academy">
+
+
+            <h2 class="title">Forma parte de nuestra academia!</h2>
+
+            <p>Formamos actores en diferentes disciplinas para enriquecer sus conocimientos a la hora de la practica teatral</p>
+
+
+
+
+
+            <ul class="ul__academy__container">
+                <li>
+                    <img class="schools" src="./assets/atapicture/academia.png" alt="Poster de academia de teatro">
+                    <p>ESTUDIA ACTUACIÓN pocos cupos disponibles✅<br>
+
+                        A Telón Abierto abrió sus inscripciones para ti y para los jóvenes de la casa.🎭</p>
+                </li>
+                <li>
+                    <img class="schools" src="./assets/atapicture/clubnoral.png" alt="Poster de club de narracion oral escenica">
+                    
+                    <p>🤩Te invitamos al CLUB NOE<br> CuentaCuentos para enseñar</p>
+                    </li>
+                <li>
+                    <img class="schools" src="./assets/atapicture/clubloratoria.png" alt="Poster de club de oratoria">
+                    <p>CLUB DE LOCUCIÓN Y ORATORIA🎙️<br>
+
+                        Te paraliza el miedo cuando tienes que presentar una propuesta laboral, exponer en clases y cualquier otra ocasión que implica hablar en público; con sólo dos horas semanales y con una mínima inversión, podrás capacitarte para ser un profesional de la palabra; incorpórate a nuestro Club de Locución y Oratoria</p>
+               
+                </li>
+            </ul>
+
+        </section>
+     
+    </main>
+
+
+    <footer id="contact-us">
+
+        <ul class="contact__container" alt="seccion de las redes sociales de A Telón Abierto">
+            <ul class="social__media__container">
+                <li>
+                    <a href="https://wa.me/584245127649">
+                        <img class="" src="./assets/icons/whatsapp-line-light.svg" alt="Logo de whatsapp">
+                    </a>   
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/atelonabiertoteatro?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="> 
+                        <img class="" src="./assets/icons/instagram-line-light.svg" alt="Logo de instagram">
+                    </a>      
+                </li>
+                <li>
+                    <a href="https://www.facebook.com/atelonabiertoteatro?show_switched_toast=0&show_invite_to_follow=0&show_switched_tooltip=0&show_podcast_settings=0&show_community_review_changes=0&show_community_rollback=0&show_follower_visibility_disclosure=0">
+                        <img class="" src="./assets/icons/facebook-circle-fill-light.svg" alt="Logo de facebook">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/@atelonabiertoteatro">
+                        <img class="" src="./assets/icons/youtube-fill-light.svg" alt="Logo de YouTube">
+                    </a>   
+                </li>
+                <li>
+                    <a href="https://www.tiktok.com/@atelonabierto?is_from_webapp=1&sender_device=pc">
+                        <img class="tiktok__logue" src="./assets/icons/tiktok-light.svg" alt="Logo de tiktok">
+                    </a>
+                </li>
+                
+            </ul>
+           
+            <li class="direction">
+                 <p> 2024. A Telon Abierto. Este de Barquisimeto. Fundalara</p>
+            </li>
+        </ul>
+
+
+    </footer>
+
+
+
+    
+    <script defer src="./jsScripts/main.js"></script>
+    <script defer src="./jsScripts/contador.js"></script>
+
+
+    
+</body>
+</html>
